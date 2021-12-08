@@ -1,5 +1,14 @@
+from morse_code import encode
+
+
 def main():
-    pass
+    while True:
+        inp: str = input(">>> ")
+        
+        if inp.isspace():
+            return
+        else:
+            print(encode(string=inp))
 
 
 if __name__ == "__main__":
