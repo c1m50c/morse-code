@@ -19,12 +19,14 @@ $ python3 src/main.py
 
 ## **Examples**
 ```bash
-message:$ morse code -- --- .-. ... . -.-. --- -.. .
-Encoded: -- --- .-. ... . -.-. --- -.. . 
-Decoded: MORSECODE
-```
-```bash
 message:$ we out here
 Encoded: .-- . --- ..- - .... . .-. . 
 Decoded:
+```
+
+```bash
+message:$ morse code -- --- .-. ... . -.-. --- -.. .
+Encoded: -- --- .-. ... . -.-. --- -.. . -....- -....- -....- -....- -....- .-.-.- -....- .-.-.- .-.-.- .-.-.- .-.-.- .-.-.- -....- .-.-.- -....- .-.-.- -....- -....- 
+-....- -....- .-.-.- .-.-.- .-.-.- 
+Decoded: MORSECODE
 ```
