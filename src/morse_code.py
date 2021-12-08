@@ -1,6 +1,7 @@
 from typing import Dict, List
 
 
+# Dictionary containing english letters with their morse code counter-parts.
 LETTERS: Dict[str, str] = {
     "A": ".-",
     "B": "-...",
@@ -31,6 +32,7 @@ LETTERS: Dict[str, str] = {
 }
 
 
+# Dictionary containing digits with their morse code counter-parts.
 NUMBERS: Dict[int, str] = {
     0: "-----",
     1: ".----",
@@ -46,6 +48,15 @@ NUMBERS: Dict[int, str] = {
 
 
 def encode(string: str) -> str:
+    """
+        Encodes a string into morse code.
+        
+        ## Parameters
+        ```py
+        string: str # String to Encode.
+        ```
+    """
+    
     result: str = ""
     
     for char in string:
@@ -58,9 +69,19 @@ def encode(string: str) -> str:
 
 
 def decode(string: str) -> str:
+    """
+        Decodes a string containing morse code into english and digits.
+        
+        ## Parameters
+        ```py
+        string: str # String to Decode.
+        ```
+    """
+    
     global LETTERS
     global NUMBERS
     
+    # Swap the Keys and Values for looking up the codes contained in the string.
     LETTERS_S: Dict[str, str] = { value: key for key, value in LETTERS.items() }
     NUMBERS_S: Dict[str, int] = { value: key for key, value in NUMBERS.items() }
     
