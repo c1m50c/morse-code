@@ -47,6 +47,7 @@ NUMBERS: Dict[int, str] = {
 }
 
 
+# Dictionary containing punctuation symbols with their morse code counter-parts.
 PUNCTUATION: Dict[str, str] = {
     ",": "--..--",
     "?": "..--..",
