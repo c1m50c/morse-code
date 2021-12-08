@@ -12,8 +12,8 @@ def main():
         
         if not inp: return
         
-        console.print(f"[green bold]Encoded:[/green bold] [blue bold]{encode(string=inp)}[/blue bold]")
-        console.print(f"[red bold]Decoded:[/red bold] [blue bold]{decode(string=inp)}[/blue bold]\n")
+        console.print(f"[green bold]Encoded:[/green bold] [cyan bold]{encode(string=inp)}[/cyan bold]")
+        console.print(f"[red bold]Decoded:[/red bold] [cyan bold]{decode(string=inp)}[/cyan bold]\n")
 
 
 if __name__ == "__main__":
