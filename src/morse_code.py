@@ -91,7 +91,7 @@ def encode(string: str) -> str:
 
 def decode(string: str) -> str:
     """
-        Decodes a string containing morse code into english and digits.
+        Decodes a string containing morse code into english, digits and punctuation symbols.
         
         ## Parameters
         ```py
