@@ -67,6 +67,12 @@ PUNCTUATION: Dict[str, str] = {
 }
 
 
+# Swap the Keys and Values for looking up the codes contained in the string.
+LETTERS_VK: Dict[str, str] = { value: key for key, value in LETTERS.items() }
+NUMBERS_VK: Dict[str, int] = { value: key for key, value in NUMBERS.items() }
+PUNCTUATION_VK: Dict[str, str] = { value: key for key, value in PUNCTUATION.items() }
+
+
 def encode(string: str) -> str:
     """
         Encodes a string into morse code.
@@ -100,24 +106,15 @@ def decode(string: str) -> str:
         ```
     """
     
-    global LETTERS
-    global NUMBERS
-    global PUNCTUATION
-    
-    # Swap the Keys and Values for looking up the codes contained in the string.
-    LETTERS_S: Dict[str, str] = { value: key for key, value in LETTERS.items() }
-    NUMBERS_S: Dict[str, int] = { value: key for key, value in NUMBERS.items() }
-    PUNCTUATION_S: Dict[str, int] = { value: key for key, value in PUNCTUATION.items() }
-    
     split_str: List[str] = string.split(" ")
     result: str = ""
     
     for code in split_str:
-        if code in LETTERS_S:
-            result += LETTERS_S[code]
-        elif code in NUMBERS_S:
-            result += str(NUMBERS_S[code])
-        elif code in PUNCTUATION_S:
-            result += PUNCTUATION_S[code]
+        if code in LETTERS_VK:
+            result += LETTERS_VK[code]
+        elif code in NUMBERS_VK:
+            result += str(NUMBERS_VK[code])
+        elif code in PUNCTUATION_VK:
+            result += PUNCTUATION_VK[code]
     
     return result
