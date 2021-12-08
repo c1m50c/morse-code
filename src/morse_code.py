@@ -47,6 +47,25 @@ NUMBERS: Dict[int, str] = {
 }
 
 
+PUNCTUATION: Dict[str, str] = {
+    ",": "--..--",
+    "?": "..--..",
+    ":": "---...",
+    "-": "-....-",
+    "\"": ".-..-.",
+    "(": "-.--.",
+    ")": "-.--.-",
+    "=": "-...-",
+    "@": ".--.-.",
+    "+": ".-.-.",
+    "_": "..--.-",
+    "'": ".----.",
+    "/": "-..-.",
+    ";": "-.-.-.",
+    ".": ".-.-.-",
+}
+
+
 def encode(string: str) -> str:
     """
         Encodes a string into morse code.
@@ -64,6 +83,8 @@ def encode(string: str) -> str:
             result += LETTERS[char.upper()] + " "
         elif char.isdigit():
             result += NUMBERS[int(char)] + " "
+        elif char in PUNCTUATION:
+            result += PUNCTUATION[char] + " "
     
     return result
 
@@ -80,10 +101,12 @@ def decode(string: str) -> str:
     
     global LETTERS
     global NUMBERS
+    global PUNCTUATION
     
     # Swap the Keys and Values for looking up the codes contained in the string.
     LETTERS_S: Dict[str, str] = { value: key for key, value in LETTERS.items() }
     NUMBERS_S: Dict[str, int] = { value: key for key, value in NUMBERS.items() }
+    PUNCTUATION_S: Dict[str, int] = { value: key for key, value in PUNCTUATION.items() }
     
     split_str: List[str] = string.split(" ")
     result: str = ""
@@ -93,5 +116,7 @@ def decode(string: str) -> str:
             result += LETTERS_S[code]
         elif code in NUMBERS_S:
             result += str(NUMBERS_S[code])
+        elif code in PUNCTUATION_S:
+            result += PUNCTUATION_S[code]
     
     return result
