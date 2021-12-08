@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, List
 
 
 LETTERS: Dict[str, str] = {
@@ -48,10 +48,29 @@ NUMBERS: Dict[int, str] = {
 def encode(string: str) -> str:
     result: str = ""
     
-    for c in string:
-        if c.isalpha():
-            result += LETTERS[c.upper()] + " "
-        elif c.isdigit():
-            result += NUMBERS[int(c)] + " "
+    for char in string:
+        if char.isalpha():
+            result += LETTERS[char.upper()] + " "
+        elif char.isdigit():
+            result += NUMBERS[int(char)] + " "
+    
+    return result
+
+
+def decode(string: str) -> str:
+    global LETTERS
+    global NUMBERS
+    
+    LETTERS_S: Dict[str, str] = { value: key for key, value in LETTERS.items() }
+    NUMBERS_S: Dict[str, int] = { value: key for key, value in NUMBERS.items() }
+    
+    split_str: List[str] = string.split(" ")
+    result: str = ""
+    
+    for code in split_str:
+        if code in LETTERS_S:
+            result += LETTERS_S[code]
+        elif code in NUMBERS_S:
+            result += str(NUMBERS_S[code])
     
     return result

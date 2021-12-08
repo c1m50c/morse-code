@@ -1,4 +1,4 @@
-from morse_code import encode
+from morse_code import encode, decode
 
 
 def main():
@@ -9,6 +9,7 @@ def main():
             return
         else:
             print(encode(string=inp))
+            print(decode(string=inp))
 
 
 if __name__ == "__main__":
