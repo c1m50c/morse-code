@@ -35,6 +35,6 @@ Decoded: MORSECODE
 ## **Encodable Characters**
 ```yml
 aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ # English Alphabet
-,?:-"()=@+-'/;.!&$ # Punctuation Symbols
+,?:-"()=@+_'/;.!&$ # Punctuation Symbols
 012345679 # Digits
 ```
