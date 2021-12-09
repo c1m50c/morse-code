@@ -1,4 +1,7 @@
 # **morse-code**
+
+[![Tests](https://github.com/c1m50c/morse-code/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/c1m50c/morse-code/actions/workflows/tests.yml)
+
 Morse Code Encoder & Decoder written in Python.
 
 
