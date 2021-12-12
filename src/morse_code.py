@@ -84,6 +84,13 @@ def encode(string: str) -> str:
         ```py
         string: str # String to Encode.
         ```
+        
+        ## Encodable Characters
+        ```txt
+        aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ # English Alphabet
+        ,?:-"()=@+_'/;.!&$ # Punctuation Symbols
+        012345679 # Digits
+        ```
     """
     
     result: str = ""
